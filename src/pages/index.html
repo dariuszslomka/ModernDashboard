@@ -13,11 +13,117 @@
       content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png"
     />
   </head>
-  
+
   <body>
-    <div class="hello">
-      <img class="hello__logo" src="../assets/img/logo.svg" alt="WTF " />
-      <span class="hello__circles"></span>
+    <header class="sidebar">
+      <h1 class="sidebar__tittle">MyApp</h1>
+      <section class="hero">
+        <img alt="hero photo" class="hero__photo">
+        <span class="hero__name">Eric Ashwood</span>
+        <span class="hero__status">Online</span>
+      </section>
+      <nav class="navigation">
+        <section class="nav-section">
+          <h2 class="nav-section__title"></h2>
+          <ul class="navigation__list">
+            <li class="list-item">
+              <span class="list-item__icon"></span>
+              <span class="list-item__text">Home</span>
+              <span class="list-item__notification"></span>
+            </li>
+            <li class="list-item">
+              <span class="list-item__icon"></span>
+              <span class="list-item__text">Users</span>
+              <span class="list-item__notification"></span>
+            </li>
+            <li class="list-item">
+              <span class="list-item__icon"></span>
+              <span class="list-item__text">Favorite</span>
+              <span class="list-item__notification"></span>
+            </li>
+            <li class="list-item">
+              <span class="list-item__icon"></span>
+              <span class="list-item__text">Widgets</span>
+              <span class="list-item__notification"></span>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+    <div class="navbar">
+    <span class="language"></span>
+    <section class="login">
+      <img alt="login photo" class="login__photo">
+      <span class="login__name">Eric Ashwood</span>
+      <span class="login__status"></span>
+    </section> 
+    <span class="signin">Sign out</span>
     </div>
+    <main class="content">
+      <h1 class="content__title">Dashboard</h1>
+      <section class="clients">
+        <h2 class="clients__title">New Clients</h2>
+        <table class="clients-list">
+          <thead class="clients-list__header">
+            <tr class="clients-heading">
+                <th class="clients-heading__data">Actions</th>
+                <th class="clients-heading__data">ID</th>
+                <th class="clients-heading__data">First Name</th>
+                <th class="clients-heading__data">Last Name</th>
+                <th class="clients-heading__data">Email</th>
+                <th class="clients-heading__data">Created</th>
+                <th class="clients-heading__data">Onboarding</th>
+                <th class="clients-heading__data">+</th>
+            </tr>
+          </thead>
+          <tbody class="clients-list__content">
+              <tr class="client">
+                  <td class="client__data"></td>
+                  <td class="client__data">12118</td>
+                  <td class="client__data">Aaron</td>
+                  <td class="client__data">Sullivan</td>
+                  <td class="client__data">a.sullivan@ex.com</td>
+                  <td class="client__data">13/08/2018</td>
+                  <td class="client__data">Pending</td>
+                  <td class="client__data"><button class="client__dropdown">...</button></td>
+              </tr>
+          </tbody>
+        </table>
+        <section class="budget">
+          <h2 class="budget__header">TOTAL REVENUE</h2>
+        </section>
+        <section class="sales">
+          <h2 class="sales__tittle">SALES EFFICIENCY</h2>
+          <ul class="sales__regions">
+            <li class="region">Europe</li>
+            <li class="region">Asia</li>
+            <li class="region">North America</li>
+            <li class="region">South America</li>
+            <li class="region">Oceania</li>
+            <li class="region">Africa</li>
+          </ul>
+        </section>
+        <section class="candidates">
+          <h2 class="candidates__tittle">RECENT CANDIDATES</h2>
+          <div class="candidates__container">
+            <article class="candidate">
+              <div class="buttons">
+                <button class="buttons__item"></button>
+                <button class="buttons__item"></button>
+                <button class="buttons__item"></button>
+              </div>
+              <img alt="candidate image" class="candidate__image">
+              <h3 class="candidate__name">Manuel Harper</h3>
+              <p class="candidate__position">UX Designer</p>
+              <div class="buttons">
+                <button class="buttons__item"></button>
+                <button class="buttons__item"></button>
+                <button class="buttons__item"></button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
   </body>
 </html>
