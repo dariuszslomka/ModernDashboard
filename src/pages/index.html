@@ -16,7 +16,7 @@
 
   <body>
     <header class="sidebar">
-      <h1 class="sidebar__tittle"><a href="#" class="sidebar__link">MyApp</a></h1>
+      <h1 class="sidebar__tittle"><a href="#" class="sidebar__link" data-text="MyApp">MyApp</a></h1>
       <section class="hero">
         <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="hero photo" class="hero__photo">
         <a href="#" class="hero__name">Eric Ashwood</a>
@@ -27,16 +27,19 @@
           <h2 class="nav-section__title">Navigation</h2>
           <ul class="navigation__list">
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Home</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons">home</i>
+                <span class="list-item__text">Home</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Users</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Users</span></a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Favorite</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Favorite</span></a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Widgets</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Widgets</span></a>
             </li>
           </ul>
         </section>
@@ -44,16 +47,18 @@
           <h2 class="nav-section__title">Community</h2>
           <ul class="navigation__list">
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Notifications</span></a>
+              <a href="#" class="list-item__link">
+                <span class="list-item__text">Notifications</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Mail</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Mail</span></a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Social</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Social</span></a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Calendar</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Calendar</span></a>
             </li>
           </ul>
         </section>
@@ -61,90 +66,92 @@
           <h2 class="nav-section__title">Settings</h2>
           <ul class="navigation__list">
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>Profile</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">Profile</span></a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text"></span>General</span></a>
+              <a href="#" class="list-item__link"><span class="list-item__text">General</span></a>
             </li>
           </ul>
         </section>
       </nav>
     </header>
-    <div class="navbar">
-    <span class="navbar__search"></span>
-    <span class="language">Polski</span>
-    <section class="login">
-      <img alt="login photo" class="login__photo">
-      <a href="#" class="login__link"><span class="login__name">Eric Ashwood</span></a>
-      <span class="login__status"></span>
-    </section> 
-    <span class="signin">Sign out</span>
-    </div>
     <main class="content">
-      <h1 class="content__title">Dashboard</h1>
-      <section class="clients">
-        <h2 class="clients__title">New Clients</h2>
-        <table class="clients-list">
-          <thead class="clients-list__header">
-            <tr class="clients-heading">
-                <th class="clients-heading__data">Actions</th>
-                <th class="clients-heading__data">ID</th>
-                <th class="clients-heading__data">First Name</th>
-                <th class="clients-heading__data">Last Name</th>
-                <th class="clients-heading__data">Email</th>
-                <th class="clients-heading__data">Created</th>
-                <th class="clients-heading__data">Onboarding</th>
-                <th class="clients-heading__data">+</th>
-            </tr>
-          </thead>
-          <tbody class="clients-list__content">
-              <tr class="client">
-                  <td class="client__data"></td>
-                  <td class="client__data">12118</td>
-                  <td class="client__data">Aaron</td>
-                  <td class="client__data">Sullivan</td>
-                  <td class="client__data">a.sullivan@ex.com</td>
-                  <td class="client__data">13/08/2018</td>
-                  <td class="client__data">Pending</td>
-                  <td class="client__data"><button class="client__dropdown">...</button></td>
+      <div class="navbar">
+        <span class="navbar__search"></span>
+        <span class="language">Polski</span>
+        <section class="login">
+          <img alt="login photo" class="login__photo">
+          <h2 class="login__name"><a href="#" class="login__link">Eric Ashwood</a></h2>
+          <span class="login__status"></span>
+        </section> 
+        <span class="signin">Sign out</span>
+      </div>
+      <div class="dashboard">
+        <h1 class="dashboard__title">Dashboard</h1>
+        <section class="clients">
+          <h2 class="clients__title">New Clients</h2>
+          <table class="clients-list">
+            <thead class="clients-list__header">
+              <tr class="clients-heading">
+                  <th class="clients-heading__data">Actions</th>
+                  <th class="clients-heading__data">ID</th>
+                  <th class="clients-heading__data">First Name</th>
+                  <th class="clients-heading__data">Last Name</th>
+                  <th class="clients-heading__data">Email</th>
+                  <th class="clients-heading__data">Created</th>
+                  <th class="clients-heading__data">Onboarding</th>
+                  <th class="clients-heading__data">+</th>
               </tr>
-          </tbody>
-        </table>
-        <section class="budget">
-          <h2 class="budget__header">TOTAL REVENUE</h2>
+            </thead>
+            <tbody class="clients-list__content">
+                <tr class="client">
+                    <td class="client__data"></td>
+                    <td class="client__data">12118</td>
+                    <td class="client__data">Aaron</td>
+                    <td class="client__data">Sullivan</td>
+                    <td class="client__data">a.sullivan@ex.com</td>
+                    <td class="client__data">13/08/2018</td>
+                    <td class="client__data">Pending</td>
+                    <td class="client__data"><button class="client__dropdown">...</button></td>
+                </tr>
+            </tbody>
+          </table>
+          <section class="budget">
+            <h2 class="budget__header">TOTAL REVENUE</h2>
+          </section>
+          <section class="sales">
+            <h2 class="sales__tittle">SALES EFFICIENCY</h2>
+            <ul class="sales__regions">
+              <li class="region">Europe</li>
+              <li class="region">Asia</li>
+              <li class="region">North America</li>
+              <li class="region">South America</li>
+              <li class="region">Oceania</li>
+              <li class="region">Africa</li>
+            </ul>
+          </section>
+          <section class="candidates">
+            <h2 class="candidates__tittle">RECENT CANDIDATES</h2>
+            <div class="candidates__container">
+              <article class="candidate">
+                <div class="buttons">
+                  <button class="buttons__item"></button>
+                  <button class="buttons__item"></button>
+                  <button class="buttons__item"></button>
+                </div>
+                <img alt="candidate image" class="candidate__image">
+                <h3 class="candidate__name">Manuel Harper</h3>
+                <p class="candidate__position">UX Designer</p>
+                <div class="buttons">
+                  <button class="buttons__item"></button>
+                  <button class="buttons__item"></button>
+                  <button class="buttons__item"></button>
+                </div>
+              </article>
+            </div>
+          </section>
         </section>
-        <section class="sales">
-          <h2 class="sales__tittle">SALES EFFICIENCY</h2>
-          <ul class="sales__regions">
-            <li class="region">Europe</li>
-            <li class="region">Asia</li>
-            <li class="region">North America</li>
-            <li class="region">South America</li>
-            <li class="region">Oceania</li>
-            <li class="region">Africa</li>
-          </ul>
-        </section>
-        <section class="candidates">
-          <h2 class="candidates__tittle">RECENT CANDIDATES</h2>
-          <div class="candidates__container">
-            <article class="candidate">
-              <div class="buttons">
-                <button class="buttons__item"></button>
-                <button class="buttons__item"></button>
-                <button class="buttons__item"></button>
-              </div>
-              <img alt="candidate image" class="candidate__image">
-              <h3 class="candidate__name">Manuel Harper</h3>
-              <p class="candidate__position">UX Designer</p>
-              <div class="buttons">
-                <button class="buttons__item"></button>
-                <button class="buttons__item"></button>
-                <button class="buttons__item"></button>
-              </div>
-            </article>
-          </div>
-        </section>
-      </section>
+      </div>
     </main>
   </body>
 </html>

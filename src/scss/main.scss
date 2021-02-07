@@ -1,7 +1,13 @@
 @import "~normalize.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Roboto:wght@400;700&display=swap&family=Material+Icons');
+
 @import "_variables";
+@import "modules/sidebar/sidebar.scss";
+@import "modules/navbar.scss";
+@import "modules/content.scss";
 
 body {
   min-height: 100vh;
+  display: flex;
 }

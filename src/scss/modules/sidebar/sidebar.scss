@@ -1,0 +1,56 @@
+@keyframes dash-logo-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.sidebar {
+    //width: min-content;
+    width: 200px;
+    background: $gray;
+
+    &__link {
+        text-decoration: none;
+        color: rgba($purple, 0.3);
+        font-family: 'Leckerli One', cursive;
+        font-size: 2.25rem;
+        text-align: center;
+        font-weight: lighter;
+        position: relative;
+        display: block;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(45deg, 
+                $gray 12.5%, 
+                transparent 12.5%, transparent 37.5%,                
+                $gray 37.5%, $gray 62.5%,
+                transparent 62.5%, transparent 87.5%,
+                $gray 87.5%);
+            background-size: 10px 10px;
+            animation: dash-logo-animation 5s infinite linear;
+        }
+
+        &::after {
+            content: attr(data-text);
+            color: $purple;
+            position: absolute;
+            left: -4px;
+            top: -2px;
+            text-shadow: -2px -2px $gray;
+        }
+    }
+
+    &__tittle {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
