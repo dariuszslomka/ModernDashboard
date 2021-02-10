@@ -9,5 +9,6 @@
 
 body {
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: $sidebar-width auto;
 }

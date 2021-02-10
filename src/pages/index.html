@@ -18,7 +18,12 @@
     <header class="sidebar">
       <h1 class="sidebar__tittle"><a href="#" class="sidebar__link" data-text="MyApp">MyApp</a></h1>
       <section class="hero">
-        <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="hero photo" class="hero__photo">
+        <div class="hero__photo-wrapper">
+          <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="hero photo" class="hero__photo">
+          <a href="#" class="hero__overlay">
+            <i class="material-icons hero__icon">add_a_photo</i>
+          </a>
+        </div>    
         <a href="#" class="hero__name">Eric Ashwood</a>
         <span class="hero__status">Online</span>
       </section>
@@ -28,18 +33,28 @@
           <ul class="navigation__list">
             <li class="list-item">
               <a href="#" class="list-item__link">
-                <i class="material-icons">home</i>
+                <i class="material-icons list-item__icon">home</i>
                 <span class="list-item__text">Home</span>
               </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Users</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">people</i>
+                <span class="list-item__text">Users</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Favorite</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">favorite</i>
+                <span class="list-item__text">Favorite</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Widgets</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">widgets</i>
+                <span class="list-item__text">Widgets</span>
+                <span class="list-item__notification list-item__notification--purple">New</span>
+              </a>
             </li>
           </ul>
         </section>
@@ -48,17 +63,28 @@
           <ul class="navigation__list">
             <li class="list-item">
               <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">notifications</i>
                 <span class="list-item__text">Notifications</span>
+                <span class="list-item__notification list-item__notification--orange">7</span>
               </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Mail</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">mail</i>
+                <span class="list-item__text">Mail</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Social</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">thumb_up</i>
+                <span class="list-item__text">Social</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Calendar</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">date_range</i>
+                <span class="list-item__text">Calendar</span>
+              </a>
             </li>
           </ul>
         </section>
@@ -66,10 +92,16 @@
           <h2 class="nav-section__title">Settings</h2>
           <ul class="navigation__list">
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">Profile</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">person_pin</i>
+                <span class="list-item__text">Profile</span>
+              </a>
             </li>
             <li class="list-item">
-              <a href="#" class="list-item__link"><span class="list-item__text">General</span></a>
+              <a href="#" class="list-item__link">
+                <i class="material-icons list-item__icon">settings</i>
+                <span class="list-item__text">General</span>
+              </a>
             </li>
           </ul>
         </section>

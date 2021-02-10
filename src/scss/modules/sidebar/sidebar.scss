@@ -1,3 +1,6 @@
+@import "sidebar-hero.scss";
+@import "sidebar-nav.scss";
+
 @keyframes dash-logo-animation {
     0% {
         background-position: 0 0;
@@ -8,8 +11,6 @@
 }
 
 .sidebar {
-    //width: min-content;
-    width: 200px;
     background: $gray;
 
     &__link {
