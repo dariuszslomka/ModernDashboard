@@ -1,3 +1,27 @@
+@keyframes alert-pulse {
+    0% {
+        box-shadow: $orange;
+    }
+
+    100% {
+        box-shadow: $orange;
+    }
+}
+
+@keyframes alert-shake {
+    5%, 15%, 25%, 35%, 45% {
+        transform: translateX(-2px);
+    }
+
+    10%, 20%, 30%, 40% {
+        transform: translateX(2px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+}
+
 .navigation {
     font-family: 'Roboto', sans-serif;
     color: $dark-lightest;
@@ -21,17 +45,89 @@
 .list-item {
     padding: 10px 16px;
     font-size: 14px;
+    color: $dark-lighter;
+    transition: color 0.2s linear;
+
+    &:hover {
+        color: $purple;
+    }
+
+    &--orange {
+        .list-item__icon {
+            position: relative;
+            transition: opacity 0.2s, transform 0.2s;
+
+            &::after {
+                content: 'arrow_forward';
+                font-family: 'Material Icons';
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity 0.2s, transform 0.2s;
+                transform: translateX(100%);
+            }
+        }
+        
+        &:hover {
+            color: $orange;
+
+            .list-item__icon {
+                transform: translateX(-100%);
+                opacity: 0;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &--alert {
+        color: $orange;
+    }
+
+    &--purple {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: $purple;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            opacity: 0;
+
+        }
+
+        &:hover, &:focus {
+            &::before {
+                transition: left 0.1s, width 0.15s .1s, opacity 2s;
+                left: 0;
+                width: 2%;
+                opacity: 1;
+            }
+        }
+    }
 
     &__link {
         display: flex;
         text-decoration: none;
-        color: $dark-lighter;
         font-weight: bold;
         position: relative;
+        color: inherit;
     }
 
     &__icon {
         margin-right: 16px;
+
+        &--alert {
+            animation: alert-pulse 2s infinite, alert-shake 2s infinite;
+            border-radius: 50%;
+        }
     }
 
     &__text {
@@ -48,11 +144,11 @@
         position: absolute;
         right: 0;
         &--purple {
-            background: $purple;
+            @include background-gradient($purple);
         }
 
         &--orange {
-            background: $orange;
+            @include background-gradient($orange);
         }
     }
 }
