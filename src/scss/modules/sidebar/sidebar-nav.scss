@@ -1,10 +1,10 @@
 @keyframes alert-pulse {
-    0% {
-        box-shadow: $orange;
+    20% {
+        box-shadow: 0 0 0 0 rgba($orange, 0.7);
     }
 
-    100% {
-        box-shadow: $orange;
+    80% {
+        box-shadow: 0 0 0 12px rgba($orange, 0);
     }
 }
 
@@ -53,13 +53,13 @@
     }
 
     &--orange {
-        .list-item__icon {
+        .list-item__wrapper {
             position: relative;
-            transition: opacity 0.2s, transform 0.2s;
 
             &::after {
                 content: 'arrow_forward';
                 font-family: 'Material Icons';
+                font-size: 24px;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -68,17 +68,24 @@
                 transform: translateX(100%);
             }
         }
+        .list-item__icon {
+
+            transition: opacity 0.2s, transform 0.2s;
+        }
         
-        &:hover {
+        &:hover, &:focus {
             color: $orange;
+
+            .list-item__wrapper {
+                &::after {
+                    opacity: 1;
+                    transform: translateX(0%);
+                }
+            }
 
             .list-item__icon {
                 transform: translateX(-100%);
                 opacity: 0;
-
-                &::after {
-                    opacity: 1;
-                }
             }
         }
     }
