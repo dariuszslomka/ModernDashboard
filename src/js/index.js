@@ -1,9 +1,7 @@
 import '../scss/main.scss';
 
-// uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
-
-/* place your code below */
-
-console.log('HELLO 🚀')
+let hamburgerButton = document.querySelector('.sidebar__toggler--js');
+hamburgerButton.addEventListener('click', () => {
+    let sidebar = document.querySelector('.sidebar--js');
+    sidebar.classList.toggle("sidebar--collapsed");
+})

@@ -1,3 +1,4 @@
+@import "sidebar-toggler.scss";
 @import "sidebar-hero.scss";
 @import "sidebar-nav.scss";
 
@@ -12,6 +13,9 @@
 
 .sidebar {
     background: $gray;
+    position: relative;
+    transition: width 0.2s linear;
+    width: $sidebar-width;
 
     &__link {
         text-decoration: none;
@@ -53,5 +57,59 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &--collapsed {
+        width: $sidebar-width-collapsed;
+
+        .sidebar {
+
+            &__toggler {
+                display: flex;
+                width: 100%;
+                position: unset;
+            }
+
+            &__toggler-icon {
+                transform: rotateY(180deg);
+            }
+
+            &__tittle {
+                display: none;
+            }
+        }
+
+        .hero {
+            &__name {
+                font-size: 10px;
+            }
+
+            &__status {
+                font-size: 10px;
+            }
+
+            &__photo-wrapper {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .list-item {
+            overflow: hidden;
+            width: $sidebar-width-collapsed;
+            background: $gray;
+            transition: width 0.2s linear;
+            padding: 10px 4px 10px 16px;
+
+            &:hover {
+                width: $sidebar-width;
+                box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+            }
+
+            &__notification {
+                font-size: 8px;
+                padding: 2px 4px;
+            }
+        }
     }
 }

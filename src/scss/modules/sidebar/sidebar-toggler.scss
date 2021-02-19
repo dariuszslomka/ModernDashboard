@@ -1,0 +1,25 @@
+.sidebar__toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: transparent;
+    color: $dark-lightest;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+
+    &:hover {
+        color: $purple;
+    }
+}
+
+.sidebar__toggler-icon {
+    font-size: 42px;
+    font-weight: bold;
+    transition: transform 0.2s linear;
+}
