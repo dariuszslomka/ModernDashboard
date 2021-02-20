@@ -94,6 +94,24 @@
             }
         }
 
+        .nav-section {
+
+            &:not(:last-child) {
+                &::after {
+                    content: '';
+                    width: 80%;
+                    display: block;
+                    height: 3px;
+                    margin: 0 auto;
+                    background: $dark-lighter;
+                }
+            }
+
+            &__title {
+                display: none;
+            }
+        }
+
         .list-item {
             overflow: hidden;
             width: $sidebar-width-collapsed;
@@ -104,6 +122,7 @@
             &:hover {
                 width: $sidebar-width;
                 box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+                z-index: 2;
             }
 
             &__notification {

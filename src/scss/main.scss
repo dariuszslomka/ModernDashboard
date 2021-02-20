@@ -17,6 +17,5 @@ html {
 
 body {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: $sidebar-width auto;
+  display: flex;
 }

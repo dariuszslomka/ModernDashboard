@@ -28,13 +28,14 @@
 
     &__list {
         list-style: none;
-        margin: 0 0 20px 0;
+        margin: 0;
         padding: 0;
     }
 }
 
 .nav-section {
-    
+    margin: 10px 0;
+
     &__title {
         font-size: 12px;
         padding: 10px 20px;
@@ -47,7 +48,8 @@
     font-size: 14px;
     color: $dark-lighter;
     transition: color 0.2s linear;
-
+    position: relative;
+    
     &:hover {
         color: $purple;
     }
@@ -95,7 +97,6 @@
     }
 
     &--purple {
-        position: relative;
 
         &::before {
             content: '';
