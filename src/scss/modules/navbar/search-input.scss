@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    padding: 0 16px;
+
+    &-search__input {
+        position: absolute;
+        background: transparent;
+        left: 50%;
+        top: 50px;
+        width: 64px;
+        height: 64px;
+        transform: translateX(-50%);
+        color: $purple;
+        font-size: 32px;
+        border-radius: 36px;
+        opacity: 0;
+        transition: width 0.2s linear;
+        border: 2px solid $purple;
+        outline: none;
+        padding: 0 30px;
+        
+        &:focus {
+            width: calc(100% - 400px);
+            opacity: 1;
+
+            & + .app {
+                transform: perspective(1024px) rotateX(30deg);
+            }
+        }
+    }
+}

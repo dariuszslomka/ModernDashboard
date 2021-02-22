@@ -62,6 +62,10 @@
     &--collapsed {
         width: $sidebar-width-collapsed;
 
+        .content { 
+            width: calc(100% - #{$sidebar-width-collapsed});
+        }
+        
         .sidebar {
 
             &__toggler {
@@ -114,7 +118,6 @@
 
         .list-item {
             overflow: hidden;
-            width: $sidebar-width-collapsed;
             background: $gray;
             transition: width 0.2s linear;
             padding: 10px 4px 10px 16px;

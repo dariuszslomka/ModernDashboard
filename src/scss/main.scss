@@ -4,7 +4,7 @@
 
 @import "_variables";
 @import "modules/sidebar/sidebar.scss";
-@import "modules/navbar.scss";
+@import "modules/navbar/navbar.scss";
 @import "modules/content.scss";
 
 html {
@@ -16,6 +16,12 @@ html {
 }
 
 body {
+
+}
+
+.app {
+  display: grid;
+  grid-template-columns: min-content auto;
   min-height: 100vh;
-  display: flex;
+  transition: transform 0.2s linear;
 }

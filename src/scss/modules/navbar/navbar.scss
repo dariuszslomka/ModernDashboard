@@ -1,0 +1,51 @@
+@import "search-input.scss";
+
+.navbar {
+    grid-area: navbar;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    height: 56px;
+
+    &__wrapper {
+        display: flex;
+    }
+}
+
+.navbar-search {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: $dark-lighter;
+    position: relative;
+
+    &__icon {
+        font-size: 38px;
+        transition: transform 0.1s linear;
+    }
+
+    &__placeholder {
+        position: absolute;
+        opacity: 0;
+        transition: transform 0.1s linear, opacity 0.1s linear;
+        font-size: 18px;
+    }
+
+    &:hover {
+        color: $purple;
+
+
+        .navbar-search {
+            &__icon {
+                transform: scale(1.2);
+            }
+
+            &__placeholder {
+                transform: translateX(100%);
+                opacity: 1;
+            }
+        }
+
+
+    }
+}
