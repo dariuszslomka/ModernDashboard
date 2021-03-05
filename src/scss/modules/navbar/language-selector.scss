@@ -36,23 +36,6 @@
   }
 }
 
-
-
-// .languages-default {
-//   // &:after {
-//   //   display: block;
-//   //   content: 'expand_more';
-//   //   position: absolute;
-//   //   font-family: 'Material Icons';
-//   //   font-size: 30px;
-//   //   color: $dark-lighter;
-//   //   top: 50%;
-//   //   transform: translateY(-50%);
-//   //   right: 5px;
-//   //   background: red;
-//   // }
-// }
-
 .language {
   padding: 0;
   margin: 0;
@@ -69,6 +52,66 @@
       border-radius: 50%;
       box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
       margin-right: 10px;
+
+      &--poland {
+        background: linear-gradient(0deg, $flag-red 50%, white 50%);
+      }
+
+      &--italy {
+        background: linear-gradient(90deg, 
+          $flag-green 33%, 
+          white 33%, white 66%, 
+          $flag-red 66%);
+      }
+
+      &--greece {
+        position: relative;
+        background: linear-gradient(0deg,
+          $flag-blue 11%,
+          white 11%, white 22%,
+          $flag-blue 22%, $flag-blue 33%,
+          white 33%, white 44%,
+          $flag-blue 44%, $flag-blue 55%,
+          white 55%, white 66%,
+          $flag-blue 66%, $flag-blue 77%,
+          white 77%, white 88%,
+          $flag-blue 88%);
+          overflow: hidden;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background: linear-gradient(to bottom, 
+              transparent 40%,
+              white 40%, white 60%,
+              transparent 60%),
+              linear-gradient(to right, 
+              $flag-blue 40%,
+              white 40%, white 60%,
+              $flag-blue 60%);
+          }     
+      }
+
+      &--czech {
+        background: linear-gradient(0deg, $flag-red 50%, white 50%);
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 50%;
+          height: 100%;
+          background: $flag-blue;
+          clip-path: polygon(0 0, 0 100%, 100% 50%);
+        }
+      }
     }
 
     &__name {
