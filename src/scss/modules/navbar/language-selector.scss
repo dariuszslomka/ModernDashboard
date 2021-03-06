@@ -120,6 +120,24 @@
         linear-gradient(160deg, white 73%, transparent 75%),
         linear-gradient(172deg, $flag-green 0, $flag-green 90%);
       }
+
+      &--grenadines {
+        background: linear-gradient(90deg,
+        $flag-blue 25%, $flag-yellow 25%, $flag-yellow 75%, $flag-green 75%);
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, 50%) scaleY(1.75) rotate(45deg);
+          background: $flag-green;
+          box-shadow: -6px 0 0 $flag-green, 0 -6px 0 $flag-green;
+        }
+      }
     }
 
     &__name {
