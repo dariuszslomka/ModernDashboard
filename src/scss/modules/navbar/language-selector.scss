@@ -112,6 +112,14 @@
           clip-path: polygon(0 0, 0 100%, 100% 50%);
         }
       }
+
+      &--seychelles {
+        background: linear-gradient(115deg, $flag-blue 28%, transparent 30%),
+        linear-gradient(130deg, $flag-yellow 43%, transparent 45%),
+        linear-gradient(145deg, $flag-red 58%, transparent 60%),
+        linear-gradient(160deg, white 73%, transparent 75%),
+        linear-gradient(172deg, $flag-green 0, $flag-green 90%);
+      }
     }
 
     &__name {

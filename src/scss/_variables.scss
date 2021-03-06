@@ -10,6 +10,7 @@ $dark-lightest: rgba(#000, .38);
 $flag-red: #ce1126;
 $flag-green: #009639;
 $flag-blue: #005eb8; 
+$flag-yellow: #fed141;
 
 @mixin background-gradient($color) {
     background: linear-gradient(45deg, $color 0, lighten($color, 17%) 50%, $color 100%);
