@@ -147,6 +147,45 @@
         radial-gradient(circle at calc(50% + 2px), white, 6px, transparent 6px),
         linear-gradient(0deg, $flag-green 0, $flag-green 100%);
       }
+
+      &--usa {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(0deg,
+          $flag-red 11%,
+          white 11%, white 22%,
+          $flag-red 22%, $flag-red 33%,
+          white 33%, white 44%,
+          $flag-red 44%, $flag-red 55%,
+          white 55%, white 66%,
+          $flag-red 66%, $flag-red 77%,
+          white 77%, white 88%,
+          $flag-red 88%);
+
+          &::before {
+            content: '';
+            width: 70%;
+            height: 60%;
+            background: $flag-blue;
+            left: 0;
+            top: 0;
+            position: absolute;
+          }
+
+          &::after {
+            content: '\2605';
+            font-style: normal;
+            position: absolute;
+            color: white;
+            font-size: 4px;
+            left: 2px;
+            top: 2px;
+            text-shadow: 3px 0 0 white, 9px 0 0 white, 15px 0 0 white,
+              0 3px 0 white, 6px 3px 0 white, 12px 3px 0 white,
+              -3px 6px 0, 3px 6px 0 white, 9px 6px 0 white, 15px 6px 0 white,
+              0 9px 0 white, 6px 9px 0 white, 12px 9px 0 white,;
+          }
+      }
     }
 
     &__name {
