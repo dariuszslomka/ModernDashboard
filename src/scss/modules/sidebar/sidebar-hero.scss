@@ -61,11 +61,11 @@
         font-weight: bold;
         transition: color 0.2s, font-size 0.2s;
         font-family: 'Roboto', sans-serif;
-        transition: font-size 0.2s linear;
+        transition: transform 0.2s linear;
 
         &:hover {
             color: $purple;
-            font-size: 17px;
+            transform: scale(1.2);
         }
     }
 
