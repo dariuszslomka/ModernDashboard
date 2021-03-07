@@ -138,6 +138,15 @@
           box-shadow: -6px 0 0 $flag-green, 0 -6px 0 $flag-green;
         }
       }
+
+      &--maldives {
+        background: 
+        linear-gradient(0deg, $flag-red 16%, transparent 16%, transparent 84%, $flag-red 84%),
+        linear-gradient(90deg, $flag-red 16%, transparent 16%, transparent 84%, $flag-red 84%),
+        radial-gradient(circle at calc(50% + 6px), $flag-green, 6px, transparent 6px),
+        radial-gradient(circle at calc(50% + 2px), white, 6px, transparent 6px),
+        linear-gradient(0deg, $flag-green 0, $flag-green 100%);
+      }
     }
 
     &__name {
