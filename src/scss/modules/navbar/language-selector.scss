@@ -1,7 +1,15 @@
 .languages {
-  height: 100%;
+  //height: 100%;
   position: relative;
   width: 200px; // TO DO REMOVE
+  cursor: pointer;
+
+  &:hover {
+    .language {
+      height: 50px;
+      opacity: 1;
+    }
+  }
 
   &__list {
     list-style: none;
@@ -32,6 +40,15 @@
       top: 100%;
       background: rgba(white, 0.9);
       box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+      transition: height 0.2s linear;
+
+      .language {
+        height: 0;
+        opacity: 0;
+      }
+      .language:hover {
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
@@ -44,6 +61,7 @@
   flex-direction: row;
   align-items: center;
   padding: 0 16px;
+  transition: height 0.2s linear, opacity 0.2s linear, box-shadow 0.2s linear;
 
     &__icon {
       display: block;
