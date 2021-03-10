@@ -80,14 +80,54 @@
 
         &::after {
             content: '';
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
             display: block;
             background: $green;
             border-radius: 50%;
             position: absolute;
             right: calc(100% + 3px);
             top: calc(50% - 2.5px);
+        }
+    }
+
+    &--slim {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 0;
+
+        .hero {
+            &__photo-wrapper {
+                height: 32px;
+                width: 32px;
+            }
+
+            &__name-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &__icon {
+                font-size: 14px;
+            }
+
+            &__name {
+                font-weight: normal;
+                padding: 2px 5px;
+            }
+
+            &__status {
+                font-weight: normal;
+            }
+
+            &__status {
+                padding: 0 5px;
+
+                &::after {
+                    right: calc(100% + 2px);
+                    border: 1px solid white;
+                }
+            }
         }
     }
 }

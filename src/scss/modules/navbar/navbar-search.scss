@@ -5,7 +5,7 @@
     color: $dark-lighter;
     position: relative;
     padding: 4px;
-    width: 100%;
+    flex: auto;
 
     &__icon {
         font-size: 38px;
