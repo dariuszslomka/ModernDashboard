@@ -1,0 +1,28 @@
+.dashboard {
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: $dark-lighter;
+
+    &__title {
+        font-size: 24px;
+        font-weight: 400;
+        margin: 48px 0;
+        padding-left: 16px;
+    }
+}
+
+.dashboard-section {
+    background: white;
+    box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 32px 16px;
+    margin-bottom: 32px;
+
+    &__title {
+        font-size: 16px;
+        font-weight: 300;
+        padding: 0;
+        margin: 0 0 32px 0;
+    }
+}
