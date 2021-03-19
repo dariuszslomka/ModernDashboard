@@ -8,6 +8,8 @@
 @import "modules/content.scss";
 @import "modules/dashboard/dashboard.scss";
 
+@import "modules/components/table.scss";
+
 html {
   box-sizing: border-box;
 }
@@ -17,7 +19,7 @@ html {
 }
 
 html {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .app {

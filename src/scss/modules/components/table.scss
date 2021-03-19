@@ -1,0 +1,19 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &__row {
+        border-bottom: 1px solid $gray;
+        height: 56px;
+
+        &:nth-of-type(even) {
+            background: $gray;
+        }
+    }
+
+    &__td {
+        padding: 0 4px;
+        font-size: 16px;
+        align-items: center;
+    }
+}

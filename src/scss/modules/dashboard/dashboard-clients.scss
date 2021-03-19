@@ -1,0 +1,15 @@
+.client {
+    &__button {
+        border: none;
+        background: transparent;
+        color: $dark-lighter;
+        font-size: 20px;
+        padding: 8px;
+        cursor: pointer;
+        transition: color 0.2s linear;
+
+        &:hover {
+            color: $purple;
+        }
+    }
+}

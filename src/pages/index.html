@@ -211,29 +211,60 @@
         <h1 class="dashboard__title">Dashboard</h1>
         <section class="dashboard-section clients">
           <h2 class="dashboard-section__title">NEW CLIENTS</h2>
-          <table class="clients-list">
-            <thead class="clients-list__header">
-              <tr class="clients-heading">
-                <th class="clients-heading__data">Actions</th>
-                <th class="clients-heading__data">ID</th>
-                <th class="clients-heading__data">First Name</th>
-                <th class="clients-heading__data">Last Name</th>
-                <th class="clients-heading__data">Email</th>
-                <th class="clients-heading__data">Created</th>
-                <th class="clients-heading__data">Onboarding</th>
-                <th class="clients-heading__data">+</th>
+          <table class="table">
+            <thead class="table__header">
+              <tr class="table__row">
+                <th class="table__th">Actions</th>
+                <th class="table__th">ID</th>
+                <th class="table__th">First Name</th>
+                <th class="table__th">Last Name</th>
+                <th class="table__th">Email</th>
+                <th class="table__th">Created</th>
+                <th class="table__th">Onboarding</th>
+                <th class="table__th">
+                  <i class="material-icons">playlist_add</i>
+                </th>
               </tr>
             </thead>
-            <tbody class="clients-list__content">
-              <tr class="client">
-                <td class="client__data"></td>
-                <td class="client__data">12118</td>
-                <td class="client__data">Aaron</td>
-                <td class="client__data">Sullivan</td>
-                <td class="client__data">a.sullivan@ex.com</td>
-                <td class="client__data">13/08/2018</td>
-                <td class="client__data">Pending</td>
-                <td class="client__data"><button class="client__dropdown">...</button></td>
+            <tbody class="table__content">
+              <tr class="table__row">
+                <td class="table__td client">
+                  <button class="material-icons client__button">edit</button>
+                  <button class="material-icons client__button">delete</button>
+                </td>
+                <td class="table__td">12118</td>
+                <td class="table__td">Aaron</td>
+                <td class="table__td">Sullivan</td>
+                <td class="table__td">a.sullivan@ex.com</td>
+                <td class="table__td">13/08/2018</td>
+                <td class="table__td">Pending</td>
+                <td class="table__td"><button class="client__dropdown">...</button></td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td client">
+                  <button class="material-icons client__button">edit</button>
+                  <button class="material-icons client__button">delete</button>
+                </td>
+                <td class="table__td">12118</td>
+                <td class="table__td">Aaron</td>
+                <td class="table__td">Sullivan</td>
+                <td class="table__td">a.sullivan@ex.com</td>
+                <td class="table__td">13/08/2018</td>
+                <td class="table__td">Pending</td>
+                <td class="table__td"><button class="client__dropdown">...</button></td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td client">
+                  <button class="material-icons client__button">edit</button>
+                  <button class="material-icons client__button">delete</button>
+                </td>
+                <td class="table__td">12118</td>
+                <td class="table__td">Aaron</td>
+                <td class="table__td">Sullivan</td>
+                <td class="table__td">a.sullivan@ex.com</td>
+                <td class="table__td">13/08/2018</td>
+                <td class="table__td">Pending</td>
+                <td class="table__td"><button class="client__dropdown">...</button></td>
               </tr>
             </tbody>
           </table>
