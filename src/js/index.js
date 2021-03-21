@@ -2,6 +2,7 @@ import '../scss/main.scss';
 
 addHandlerToMenuToggleButton();
 addHandlersOnClickToLanguages();
+addHandlersOnClientDropdownClick();
 
 function addHandlersOnClickToLanguages() {
     let languagesList = document.querySelector('.languages__list--selection'); 
@@ -32,4 +33,13 @@ function setLanguage(languageHtml) {
     let languageDefault = languageDefaultList.querySelector('.language');
 
     languageDefault.innerHTML = languageHtml;
+}
+
+function addHandlersOnClientDropdownClick() {
+    let dropdowns = document.querySelectorAll('.client__dropdown--js');
+    dropdowns.forEach(element => {
+        element.addEventListener('click', () => {
+            element.classList.toggle("client__dropdown--collapsed");
+        })
+    });
 }
