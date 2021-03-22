@@ -15,4 +15,35 @@
         padding: 0 4px;
         font-size: 16px;
     }
+
+    &__th {
+        padding: 0 4px;
+        text-align: left;
+        color: $dark-lighter;
+        font-weight: 700;
+        font-size: 15px;
+
+        &:nth-of-type(1) {
+            width: 84px;
+        }
+
+        &--sortable
+        {
+            cursor: pointer;
+
+            &::after {
+                opacity: 0;
+                content: 'arrow_drop_up';
+                font-family: 'Material Icons';
+                display: inline-block;
+                vertical-align: bottom;
+            }
+
+            &:hover {
+                &::after {
+                    opacity:1;
+                }
+            }
+        }
+    }
 }
