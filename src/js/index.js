@@ -1,8 +1,10 @@
 import '../scss/main.scss';
+import {sortTableByColumnAscending, sortTableByColumnDescending} from './tablesort.js';
 
 addHandlerToMenuToggleButton();
 addHandlersOnClickToLanguages();
 addHandlersOnClientDropdownClick();
+addTableSortableHandlers();
 
 function addHandlersOnClickToLanguages() {
     let languagesList = document.querySelector('.languages__list--selection'); 
@@ -42,4 +44,23 @@ function addHandlersOnClientDropdownClick() {
             element.classList.toggle("client__dropdown--collapsed");
         })
     });
+}
+
+function addTableSortableHandlers() {
+    let tableHeaders = document.querySelectorAll('.table__th--sortable'); 
+    tableHeaders.forEach(element => {
+        element.addEventListener('click', () => {
+            let tableElement = element.parentElement.parentElement.parentElement;
+            let columnIndex = Array.prototype.indexOf.call(element.parentElement.children, element);
+            
+            if (element.classList.contains("th-sort-asc"))
+            {
+                sortTableByColumnDescending(tableElement, columnIndex);
+            }
+            else
+            {
+                sortTableByColumnAscending(tableElement, columnIndex);
+            }
+        })
+    })
 }
