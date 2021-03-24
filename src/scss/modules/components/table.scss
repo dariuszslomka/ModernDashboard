@@ -37,11 +37,27 @@
                 font-family: 'Material Icons';
                 display: inline-block;
                 vertical-align: bottom;
+                transition: transform 0.2s linear;
             }
 
             &:hover {
                 &::after {
                     opacity:1;
+                }
+            }
+
+            &[class*="th-sort-asc"]{
+                color: $purple;
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            &[class*="th-sort-desc"]{
+                color: $purple;
+                &:after {
+                    opacity: 1;
+                    transform: rotate(180deg);
                 }
             }
         }
