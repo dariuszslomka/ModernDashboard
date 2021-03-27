@@ -52,14 +52,15 @@ function addTableSortableHandlers() {
         element.addEventListener('click', () => {
             let tableElement = element.parentElement.parentElement.parentElement;
             let columnIndex = Array.prototype.indexOf.call(element.parentElement.children, element);
-            
+            let sortType = element.dataset.type;
+
             if (element.classList.contains("th-sort-asc"))
             {
-                sortTableByColumnDescending(tableElement, columnIndex);
+                sortTableByColumnDescending(tableElement, columnIndex, sortType);
             }
             else
             {
-                sortTableByColumnAscending(tableElement, columnIndex);
+                sortTableByColumnAscending(tableElement, columnIndex, sortType);
             }
         })
     })
