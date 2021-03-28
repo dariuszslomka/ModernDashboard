@@ -380,20 +380,39 @@
             </tbody>
           </table>
         </section>
-        <section class="dashboard-section budget">
-          <h2 class="dashboard-section__title">TOTAL REVENUE</h2>
-        </section>
-        <section class="dashboard-section sales">
-          <h2 class="dashboard-section__title">SALES EFFICIENCY</h2>
-          <ul class="sales__regions">
-            <li class="region">Europe</li>
-            <li class="region">Asia</li>
-            <li class="region">North America</li>
-            <li class="region">South America</li>
-            <li class="region">Oceania</li>
-            <li class="region">Africa</li>
-          </ul>
-        </section>
+        <div class="dashboard__container">
+          <div class="budget-container dashboard-section ">
+            <div class="budget-container__wrapper">
+              <section class="budget">
+                <h2 class="dashboard-section__title">TOTAL REVENUE</h2>
+                <div class="budget__selection">
+                  <span class="budget__item budget__item--main">Yearly</span>
+                  <span class="budget__item">Jun</span>
+                  <span class="budget__item">Jul</span>
+                  <span class="budget__item">Aug</span>
+                </div>
+              </section>
+              <section class="costs">
+                <h2 class="dashboard-section__title">TOTAL COSTS</h2>
+              </section>
+            </div>
+            <p class="budget-container__description">
+              <a href="#" class="budget-container__link">Click here</a>
+              <span> to see more statistics.</span>
+            </p>
+          </div>
+          <section class="dashboard-section sales">
+            <h2 class="dashboard-section__title">SALES EFFICIENCY</h2>
+            <ul class="sales__regions">
+              <li class="region">Europe</li>
+              <li class="region">Asia</li>
+              <li class="region">North America</li>
+              <li class="region">South America</li>
+              <li class="region">Oceania</li>
+              <li class="region">Africa</li>
+            </ul>
+          </section>
+        </div>
         <section class="dashboard-section candidates">
           <h2 class="dashboard-section__title">RECENT CANDIDATES</h2>
           <div class="candidates__container">
@@ -414,7 +433,7 @@
             </article>
           </div>
         </section>
-        
+
       </div>
     </main>
   </div>
