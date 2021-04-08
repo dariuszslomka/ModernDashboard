@@ -33,6 +33,10 @@
         text-align: center;
         cursor: pointer;
 
+        &:focus, &:hover {
+            color: $purple;
+        }
+
         &--main {
             @include background-gradient($purple);
             box-shadow: 0 2px 14px rgba(0, 0, 0, 0.15);

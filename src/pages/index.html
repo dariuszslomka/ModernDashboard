@@ -391,9 +391,36 @@
                   <span class="budget__item">Jul</span>
                   <span class="budget__item">Aug</span>
                 </div>
+                <!-- <div class="progress-chart progress-chart--purple" data-percentage="70deg">
+                  <i class="progress-chart__progress"></i>
+                  <i class="progress-chart__progress"></i>
+                  <i class="progress-chart__progress"></i>
+                  <i class="progress-chart__progress"></i>
+                </div> -->
+                <div class='progress-chart progress-chart--purple' style="--percent: 70">
+                  <svg width='200' height='200' class='chart-container'>
+                    <circle cx='100' cy='100' r='90' class='back' fill='none' class='back'/>
+                    <circle cx='100' cy='100' r='90' class='front' fill='none'/>
+                
+                    <text x='100' y='100' alignment-baseline="central" text-anchor="middle" class="percent"></text>
+                  </svg>
+                </div>
               </section>
               <section class="costs">
                 <h2 class="dashboard-section__title">TOTAL COSTS</h2>
+                <!-- <div class="progress-chart progress-chart--orange">
+                  
+                </div> -->
+                <div class='progress-chart progress-chart--orange' style="--percent: 40">
+                  <svg width='200' height='200' class='chart-container'>
+                    <circle cx='100' cy='100' r='90' class='back' fill='none' class='back'/>
+                    <circle cx='100' cy='100' r='90' class='front' fill='none' />
+                
+                    <g class='text'>
+                      <text x='100' y='100' alignment-baseline="central" text-anchor="middle" id='percentage'></text>
+                    </g>
+                  </svg>
+                </div>
               </section>
             </div>
             <p class="budget-container__description">

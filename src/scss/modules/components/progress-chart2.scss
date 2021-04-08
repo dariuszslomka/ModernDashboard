@@ -1,0 +1,63 @@
+$chart-border-size: 6px;
+
+@keyframes fill {
+    // 1000000 is just a really big number to make sure there will be no "dash" inside the stroke
+    to { stroke-dasharray: 0,1000000; }
+}
+
+.progress-chart {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto;
+    position: relative;
+
+    // &::before {
+    //     content: var(--percent);
+    //     position: absolute;
+    //     top: calc(50% - .75rem);
+    //     left: 50%;
+    // }
+
+    // &::after {
+    //     content: var(--percent);
+    //     position: absolute;
+    //     top: calc(50% - .75rem);
+    //     left: 50%;
+    // }
+    &--orange {
+        .front {
+            stroke: $orange;
+        }
+    }
+
+    &--purple {
+        .front {
+            stroke: $purple;
+        }
+    }
+}
+
+.chart-container {
+    .back {
+        stroke: #f5f5f5;
+        stroke-width: $chart-border-size;
+    }
+    
+    .front {
+        stroke-width: $chart-border-size;
+        stroke-linecap: round;
+        stroke-dasharray: calc((2 * #{$PI} * 90) * var(--percent) / 100) calc((2 * #{$PI} * 90));
+        transform: rotate(-90deg);
+        transform-origin: center;
+        animation: fill 2s reverse;
+    }
+
+    .percent {
+        font-size: 32px;
+        // darken is a SCSS convenient function to make a color darker
+        fill: darken($purple, 5%);
+        content: 'fsfs';
+        opacity: 0;
+        transform: translateY(30%);
+    }
+}
