@@ -10,29 +10,46 @@ $chart-border-size: 6px;
     justify-content: center;
     margin: 16px auto;
     position: relative;
+    counter-reset: percentCounter;
+    
 
-    // &::before {
-    //     content: var(--percent);
-    //     position: absolute;
-    //     top: calc(50% - .75rem);
-    //     left: 50%;
-    // }
+    &::before {
+        counter-increment: percentCounter var(--percent);
+        content: counter(percentCounter) '%';
+        position: absolute;
+        top: calc(50% - 12px);
+        left: 50%;
+        font-size: 32px;
+        transform: translate(-50%, -50%);
+    }
 
-    // &::after {
-    //     content: var(--percent);
-    //     position: absolute;
-    //     top: calc(50% - .75rem);
-    //     left: 50%;
-    // }
+    &::after {
+        content: attr(data-description);
+        position: absolute;
+        top: calc(50% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        text-align: center;
+    }
+    
     &--orange {
         .front {
             stroke: $orange;
+        }
+
+        &::before {
+            color: $orange;
         }
     }
 
     &--purple {
         .front {
             stroke: $purple;
+        }
+
+        &::before {
+            color: $purple;
         }
     }
 }
@@ -50,14 +67,5 @@ $chart-border-size: 6px;
         transform: rotate(-90deg);
         transform-origin: center;
         animation: fill 2s reverse;
-    }
-
-    .percent {
-        font-size: 32px;
-        // darken is a SCSS convenient function to make a color darker
-        fill: darken($purple, 5%);
-        content: 'fsfs';
-        opacity: 0;
-        transform: translateY(30%);
     }
 }
