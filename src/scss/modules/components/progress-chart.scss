@@ -1,38 +1,71 @@
-$chart-size: 160px;
 $chart-border-size: 6px;
 
+@keyframes fill {
+    // 1000000 is just a really big number to make sure there will be no "dash" inside the stroke
+    to { stroke-dasharray: 0,1000000; }
+}
+
 .progress-chart {
-    width: $chart-size;
-    height: $chart-size;
-    border-radius: 50%;
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.15);
-    border-style: solid;
-    border-width: $chart-border-size;
+    display: flex;
+    justify-content: center;
     margin: 16px auto;
     position: relative;
-    border-color: #f5f5f5;
+    counter-reset: percentCounter;
+    
 
-    // &--purple {
-    //     border-color: $purple;
-    //     box-shadow: 0 12px 20px rgba(156, 39, 176, 0.2);
-    // }
-
-    // &--orange {
-    //     border-color: $orange;
-    //     box-shadow: 0 12px 20px rgba(255, 167, 38, 0.2);
-    // }
-
-    &__progress {
+    &::before {
+        counter-increment: percentCounter var(--percent);
+        content: counter(percentCounter) '%';
         position: absolute;
-        padding: 0;
-        left: -$chart-border-size;
-        top: -$chart-border-size;
-        width: $chart-size;
-        height: $chart-size;
-        border-radius: 50%;
-        border-style: solid;
-        border-width: $chart-border-size;
-        border-color: $purple transparent transparent transparent;
-        transform: rotate(10deg);
+        top: calc(50% - 12px);
+        left: 50%;
+        font-size: 32px;
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        content: attr(data-description);
+        position: absolute;
+        top: calc(50% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    &--orange {
+        .front {
+            stroke: $orange;
+        }
+
+        &::before {
+            color: $orange;
+        }
+    }
+
+    &--purple {
+        .front {
+            stroke: $purple;
+        }
+
+        &::before {
+            color: $purple;
+        }
+    }
+}
+
+.chart-container {
+    .back {
+        stroke: #f5f5f5;
+        stroke-width: $chart-border-size;
+    }
+    
+    .front {
+        stroke-width: $chart-border-size;
+        stroke-linecap: round;
+        stroke-dasharray: calc((2 * #{$PI} * 90) * var(--percent) / 100) calc((2 * #{$PI} * 90));
+        transform: rotate(-90deg);
+        transform-origin: center;
+        animation: fill 1s reverse;
     }
 }

@@ -391,36 +391,44 @@
                   <span class="budget__item">Jul</span>
                   <span class="budget__item">Aug</span>
                 </div>
-                <!-- <div class="progress-chart progress-chart--purple" data-percentage="70deg">
-                  <i class="progress-chart__progress"></i>
-                  <i class="progress-chart__progress"></i>
-                  <i class="progress-chart__progress"></i>
-                  <i class="progress-chart__progress"></i>
-                </div> -->
                 <div class='progress-chart progress-chart--purple' style="--percent: 70"
                   data-description="of target">
-                  <svg width='200' height='200' class='chart-container'>
-                    <circle cx='100' cy='100' r='90' class='back' fill='none' class='back'/>
-                    <circle cx='100' cy='100' r='90' class='front' fill='none'/>
-                
-                    <text x='100' y='100' alignment-baseline="central" text-anchor="middle" class="percent"></text>
+                  <svg width='180' height='180' class='chart-container'>
+                    <circle cx='90' cy='90' r='80' class='back' fill='none' class='back'/>
+                    <circle cx='90' cy='90' r='80' class='front' fill='none'/>
                   </svg>
                 </div>
               </section>
               <section class="costs">
                 <h2 class="dashboard-section__title">TOTAL COSTS</h2>
-                <!-- <div class="progress-chart progress-chart--orange">
-                  
-                </div> -->
+                <div class="date-selection">
+                  <i class="material-icons date-selection__button date-selection__button--js">date_range</i>
+                  <span class="date-selection__range">02.08.2021- 15.08.2021</span>
+                </div>
+                <div class="calendar calendar--js">
+                  <div class="month-nav">
+                    <button class="month-nav__previous-month"></button>
+                    <span class="month-nav__current-month"></span>
+                    <button class="month-nav__next-month"></button>
+                  </div>
+                  <div class="calendar__labels-wrapper">
+                    <span class="calendar__label">Sun</span>
+                    <span class="calendar__label">Mon</span>
+                    <span class="calendar__label">Tue</span>
+                    <span class="calendar__label">Wed</span>
+                    <span class="calendar__label">Thu</span>
+                    <span class="calendar__label">Fri</span>
+                    <span class="calendar__label">Sat</span>
+                  </div>
+                  <div class="calendar__days-wrapper">
+                    
+                  </div>
+                </div>
                 <div class='progress-chart progress-chart--orange' style="--percent: 40"
                   data-description="of total budget (25%)">
-                  <svg width='200' height='200' class='chart-container'>
-                    <circle cx='100' cy='100' r='90' class='back' fill='none' class='back'/>
-                    <circle cx='100' cy='100' r='90' class='front' fill='none' />
-                
-                    <g class='text'>
-                      <text x='100' y='100' alignment-baseline="central" text-anchor="middle" id='percentage'></text>
-                    </g>
+                  <svg width='180' height='180' class='chart-container'>
+                    <circle cx='90' cy='90' r='80' class='back' fill='none' class='back'/>
+                    <circle cx='90' cy='90' r='80' class='front' fill='none' />
                   </svg>
                 </div>
               </section>

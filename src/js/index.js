@@ -5,6 +5,7 @@ addHandlerToMenuToggleButton();
 addHandlersOnClickToLanguages();
 addHandlersOnClientDropdownClick();
 addTableSortableHandlers();
+addCalendarHandler();
 
 function addHandlersOnClickToLanguages() {
     let languagesList = document.querySelector('.languages__list--selection'); 
@@ -44,6 +45,14 @@ function addHandlersOnClientDropdownClick() {
             element.classList.toggle("client__dropdown--collapsed");
         })
     });
+}
+
+function addCalendarHandler() {
+    let calendarButton = document.querySelector('.date-selection__button--js');
+    calendarButton.addEventListener('click', () => {
+        let calendar = document.querySelector('.calendar--js');
+        calendar.classList.toggle("calendar--collapsed");
+    })
 }
 
 function addTableSortableHandlers() {

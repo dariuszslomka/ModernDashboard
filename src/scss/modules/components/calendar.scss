@@ -1,0 +1,13 @@
+.calendar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 16px;
+    opacity: 1;
+    box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+    background: white;
+
+    &--collapsed {
+        opacity: 1;
+    }
+}
