@@ -1,13 +1,106 @@
+$calendar-day-size: 48px;
+
 .calendar {
-    position: absolute;
-    left: 0;
-    top: 0;
     padding: 16px;
     opacity: 1;
     box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
     background: white;
+    z-index: 5;
 
     &--collapsed {
         opacity: 1;
+    }
+
+    &__days-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(#{$calendar-day-size} * 7);
+    }
+
+    &__day {
+        width: $calendar-day-size;
+        height: $calendar-day-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-style: normal;
+        font-size: 12px;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            width: 75%;
+            height: 75%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: -10;
+            transition: box-shadow 0.2s linear;
+        }
+
+        &:hover {
+            &::before {
+                box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        &--inactive {
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &--selected {
+            &::before {
+                @include background-gradient($orange);
+            }
+
+            color: white;
+        }
+    }
+
+    &__labels-wrapper {
+        width: calc(#{$calendar-day-size} * 7);
+        display: flex;
+    }
+
+    &__label {
+        height: $calendar-day-size;
+        width: $calendar-day-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+.month-nav {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__switcher {
+        color: $dark-lighter;
+        border: none;
+        background: transparent;
+        font-family: 'Material Icons';
+        cursor: pointer;
+        outline: none;
+        transition: color 0.2s linear;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__current-month {
+        padding: 0 8px;
     }
 }
