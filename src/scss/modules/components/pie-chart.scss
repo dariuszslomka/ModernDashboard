@@ -1,0 +1,15 @@
+.pie-chart {
+
+    &__background {
+        box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+    }
+
+    &__circle {
+        --percent: 60;
+        transform: rotate(-90deg);
+        stroke-width: 80;
+        transform-origin: center;
+        stroke-dasharray: calc((2 * #{$PI} * 40) * var(--percent) / 100) calc((2 * #{$PI} * 80));
+    }
+}

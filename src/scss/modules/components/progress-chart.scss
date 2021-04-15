@@ -12,7 +12,6 @@ $chart-border-size: 6px;
     position: relative;
     counter-reset: percentCounter;
     
-
     &::before {
         counter-increment: percentCounter var(--percent);
         content: counter(percentCounter) '%';

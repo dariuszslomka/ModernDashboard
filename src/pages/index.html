@@ -394,7 +394,7 @@
                 <div class='progress-chart progress-chart--purple' style="--percent: 70"
                   data-description="of target">
                   <svg width='180' height='180' class='chart-container'>
-                    <circle cx='90' cy='90' r='80' class='back' fill='none' class='back'/>
+                    <circle cx='90' cy='90' r='80' class='back' fill='none'/>
                     <circle cx='90' cy='90' r='80' class='front' fill='none'/>
                   </svg>
                 </div>
@@ -451,7 +451,7 @@
                       <i class="calendar__day">22</i>
                       <i class="calendar__day">23</i>
                       <i class="calendar__day">24</i>
-                      <i class="calendar__day">25</i>
+                      <i class="calendar__day calendar__day--today">25</i>
                       <i class="calendar__day">26</i>
                       <i class="calendar__day">27</i>
                       <i class="calendar__day">28</i>
@@ -465,7 +465,7 @@
                 <div class='progress-chart progress-chart--orange' style="--percent: 40"
                   data-description="of total budget">
                   <svg width='180' height='180' class='chart-container'>
-                    <circle cx='90' cy='90' r='80' class='back' fill='none' class='back'/>
+                    <circle cx='90' cy='90' r='80' class='back' fill='none'/>
                     <circle cx='90' cy='90' r='80' class='front' fill='none' />
                   </svg>
                 </div>
@@ -486,6 +486,24 @@
               <li class="region">Oceania</li>
               <li class="region">Africa</li>
             </ul>
+            <div class="pie-charts-wrapper">
+              <div class="pie-chart__wrapper">
+                <article class="pie-chart">
+                  <svg width='160' height='160' class='pie-chart__background pie-chart__background--purple'>
+                    <circle cx='80' cy='80' r='40' class='pie-chart__circle' fill='none' />
+                  </svg>
+                  <h3 class="pie-chart__header">CRM solutions</h3>
+                </article>
+              </div>
+              <div class="pie-chart__wrapper">
+                <article class="pie-chart">
+                  <svg width='160' height='160' class='pie-chart__background pie-chart__background--orange'>
+                    <circle cx='80' cy='80' r='40' class='pie-chart__circle' fill='none' />
+                  </svg>
+                  <h3 class="pie-chart__header">Mobile Apps</h3>
+                </article>
+              </div>
+            </div>
           </section>
         </div>
         <section class="dashboard-section candidates">
