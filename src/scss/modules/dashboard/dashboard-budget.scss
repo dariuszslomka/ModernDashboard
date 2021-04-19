@@ -31,7 +31,7 @@
     }
 
     &__item {
-        font-size: 15px;
+        font-size: 14px;
         width: 25%;
         max-width: 48px;
         padding: 16px 0;
@@ -68,6 +68,10 @@
         color: white;
         padding: 12px;
         margin-right: 16px;
+    }
+
+    &__range {
+        font-size: 14px;
     }
 }
 
