@@ -18,28 +18,25 @@
 .pie-chart {
     position: relative;
 
+    &--primary {
+        --percent: 70;
+        .pie-chart__circle {
+            stroke: $purple;
+        }
+    }
+
+    &--secondary {
+        --percent: 40;
+        .pie-chart__circle {
+            stroke: $orange;
+        }
+    }
+
     &__wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    
-    &__background
-    {    
-        &--purple {
-            --percent: 10;
-            .pie-chart__circle {
-                stroke: $purple;
-            }
-        }
-
-        &--orange {
-            --percent: 69;
-            .pie-chart__circle {
-                stroke: $orange;
-            }
-        }
     }
 
     &__header {
@@ -49,7 +46,11 @@
     }
 
     &::after {
-        content: '20%';
+        counter-increment: percentCounter var(--percent);
+        content: counter(percentCounter) '%';
+        //content: '20%';
+        //counter-increment: percentCounter var(--percent);
+        //content: counter(percentCounter);
         position: absolute;
         top: 160px;
         right: 0;

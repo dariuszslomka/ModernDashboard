@@ -7,6 +7,9 @@ addHandlersOnClientDropdownClick();
 addTableSortableHandlers();
 addCalendarHandler();
 
+let test = document.querySelector('.pie-chart--primary'); 
+test.style.setProperty('--percent', 98);
+
 function addHandlersOnClickToLanguages() {
     let languagesList = document.querySelector('.languages__list--selection'); 
     let languages = languagesList.querySelectorAll('.language');
