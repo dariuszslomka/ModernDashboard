@@ -10,5 +10,6 @@
         stroke-width: 80;
         transform-origin: center;
         stroke-dasharray: calc((2 * #{$PI} * 40) * var(--percent) / 100) calc((2 * #{$PI} * 80));
+        transition: stroke-dasharray 0.2s linear;
     }
 }

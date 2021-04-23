@@ -1,79 +1,131 @@
-import '../scss/main.scss';
-import {sortTableByColumnAscending, sortTableByColumnDescending} from './tablesort.js';
+import "../scss/main.scss";
+import {
+  sortTableByColumnAscending,
+  sortTableByColumnDescending,
+} from "./tablesort.js";
 
 addHandlerToMenuToggleButton();
 addHandlersOnClickToLanguages();
 addHandlersOnClientDropdownClick();
 addTableSortableHandlers();
 addCalendarHandler();
-
-let test = document.querySelector('.pie-chart--primary'); 
-test.style.setProperty('--percent', 98);
+addSalesRegionHandlers();
 
 function addHandlersOnClickToLanguages() {
-    let languagesList = document.querySelector('.languages__list--selection'); 
-    let languages = languagesList.querySelectorAll('.language');
+  let languagesList = document.querySelector(".languages__list--selection");
+  let languages = languagesList.querySelectorAll(".language");
 
-    languages.forEach(element => {
-        addHandleOnClick(element);
-    });
+  languages.forEach((element) => {
+    addHandleOnClick(element);
+  });
 }
 
 function addHandleOnClick(item) {
-    item.addEventListener('click', () => {
-        console.log(`Wybrałeś ${item.innerHTML}`);
-        setLanguage(item.innerHTML);
-    })
+  item.addEventListener("click", () => {
+    console.log(`Wybrałeś ${item.innerHTML}`);
+    setLanguage(item.innerHTML);
+  });
 }
 
 function addHandlerToMenuToggleButton() {
-    let hamburgerButton = document.querySelector('.sidebar__toggler--js');
-    hamburgerButton.addEventListener('click', () => {
-        let sidebar = document.querySelector('.sidebar--js');
-        sidebar.classList.toggle("sidebar--collapsed");
-    })
+  let hamburgerButton = document.querySelector(".sidebar__toggler--js");
+  hamburgerButton.addEventListener("click", () => {
+    let sidebar = document.querySelector(".sidebar--js");
+    sidebar.classList.toggle("sidebar--collapsed");
+  });
 }
 
 function setLanguage(languageHtml) {
-    let languageDefaultList = document.querySelector('.languages__list--default');
-    let languageDefault = languageDefaultList.querySelector('.language');
+  let languageDefaultList = document.querySelector(".languages__list--default");
+  let languageDefault = languageDefaultList.querySelector(".language");
 
-    languageDefault.innerHTML = languageHtml;
+  languageDefault.innerHTML = languageHtml;
 }
 
 function addHandlersOnClientDropdownClick() {
-    let dropdowns = document.querySelectorAll('.client__dropdown--js');
-    dropdowns.forEach(element => {
-        element.addEventListener('click', () => {
-            element.classList.toggle("client__dropdown--collapsed");
-        })
+  let dropdowns = document.querySelectorAll(".client__dropdown--js");
+  dropdowns.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.classList.toggle("client__dropdown--collapsed");
     });
+  });
 }
 
 function addCalendarHandler() {
-    let calendarButton = document.querySelector('.date-selection__button--js');
-    calendarButton.addEventListener('click', () => {
-        let calendar = document.querySelector('.calendar--js');
-        calendar.classList.toggle("calendar--collapsed");
-    })
+  let calendarButton = document.querySelector(".date-selection__button--js");
+  calendarButton.addEventListener("click", () => {
+    let calendar = document.querySelector(".calendar--js");
+    calendar.classList.toggle("calendar--collapsed");
+  });
 }
 
 function addTableSortableHandlers() {
-    let tableHeaders = document.querySelectorAll('.table__th--sortable'); 
-    tableHeaders.forEach(element => {
-        element.addEventListener('click', () => {
-            let tableElement = element.parentElement.parentElement.parentElement;
-            let columnIndex = Array.prototype.indexOf.call(element.parentElement.children, element);
-            let sortType = element.dataset.type;
+  let tableHeaders = document.querySelectorAll(".table__th--sortable");
+  tableHeaders.forEach((element) => {
+    element.addEventListener("click", () => {
+      let tableElement = element.parentElement.parentElement.parentElement;
+      let columnIndex = Array.prototype.indexOf.call(
+        element.parentElement.children,
+        element
+      );
+      let sortType = element.dataset.type;
 
-            if (element.classList.contains("th-sort-asc"))
-            {
-                sortTableByColumnDescending(tableElement, columnIndex, sortType);
-            }
-            else
-            {
-                sortTableByColumnAscending(tableElement, columnIndex, sortType);
-            }
-        })
-    })
+      if (element.classList.contains("th-sort-asc")) {
+        sortTableByColumnDescending(tableElement, columnIndex, sortType);
+      } else {
+        sortTableByColumnAscending(tableElement, columnIndex, sortType);
+      }
+    });
+  });
+}
+
+function addSalesRegionHandlers() {
+  let languages = document.querySelectorAll(".region");
+
+  languages.forEach((element) => {
+    addRegionActionOnClick(element);
+  });
+}
+
+function addRegionActionOnClick(item) {
+  item.addEventListener("click", () => {
+    let country = item.innerHTML;
+    let primaryChartValue = 0;
+    let secondaryChartValue = 0;
+
+    switch (country) {
+      case "Europe":
+        primaryChartValue = 80;
+        secondaryChartValue = 63;
+        break;
+      case "Asia":
+        primaryChartValue = 76;
+        secondaryChartValue = 70;
+        break;
+      case "North America":
+        primaryChartValue = 50;
+        secondaryChartValue = 73;
+        break;
+      case "South America":
+        primaryChartValue = 31;
+        secondaryChartValue = 60;
+        break;
+      case "Oceania":
+        primaryChartValue = 21;
+        secondaryChartValue = 30;
+        break;
+      case "Africa":
+        primaryChartValue = 10;
+        secondaryChartValue = 70;
+        break;
+      default:
+        break;
+    }
+
+    let pieCharPrimary = document.querySelector(".pie-chart--primary");
+    pieCharPrimary.style.setProperty("--percent", primaryChartValue);
+
+    let pieCharSecondary = document.querySelector(".pie-chart--secondary");
+    pieCharSecondary.style.setProperty("--percent", secondaryChartValue);
+  });
 }
