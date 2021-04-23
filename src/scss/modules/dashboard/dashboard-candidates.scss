@@ -1,0 +1,63 @@
+.candidates.dashboard-section {
+    background: transparent;
+    box-shadow: none;
+}
+
+.candidates__container {
+    display: flex;
+}
+
+.candidate {
+    width: calc(100% / 6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 16px;
+    background: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+    &__image {
+        border-radius: 50%;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        width: 128px;
+        height: 128px;
+        margin: 16px 0 24px 0;
+    }
+
+    &__name {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0 0 8px 0;
+    }
+
+    &__position {
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0 0 16px 0;
+    }
+
+    &__icons-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        width: calc(100% / 3);
+        background: transparent;
+        border: none;
+        color: $dark-lighter;
+        cursor: pointer;
+        
+        &:hover {
+            color: $purple;
+        }
+    }
+
+    &__icon {
+        padding: 16px 0;
+
+    }
+}
