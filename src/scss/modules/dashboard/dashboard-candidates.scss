@@ -1,14 +1,52 @@
+$candidates-number: 6;
+$visible-candidate: 4;
+
+@keyframes sliding {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% / #{$candidates-number} * (#{$candidates-number} - #{$visible-candidate})));
+    }
+}
+
 .candidates.dashboard-section {
     background: transparent;
     box-shadow: none;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 32px;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(to right, $gray, transparent 50%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 32px;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(to left, $gray, transparent 50%);
+    }
 }
 
 .candidates__container {
     display: flex;
+    width: calc(100% * #{$candidates-number} / #{$visible-candidate});
+    animation: sliding 16s infinite alternate-reverse linear;
 }
 
 .candidate {
-    width: calc(100% / 6);
+    width: calc(100% / #{$candidates-number} - 32px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,10 +92,17 @@
         &:hover {
             color: $purple;
         }
+
+        &--checked {
+            color: $orange;
+        }
+
+        &.candidate__button-star:hover {
+            color: $orange;
+        }
     }
 
     &__icon {
         padding: 16px 0;
-
     }
 }

@@ -10,6 +10,7 @@ addHandlersOnClientDropdownClick();
 addTableSortableHandlers();
 addCalendarHandler();
 addSalesRegionHandlers();
+addButtonsFavoriteHandlers();
 
 function addHandlersOnClickToLanguages() {
   let languagesList = document.querySelector(".languages__list--selection");
@@ -127,5 +128,15 @@ function addRegionActionOnClick(item) {
 
     let pieCharSecondary = document.querySelector(".pie-chart--secondary");
     pieCharSecondary.style.setProperty("--percent", secondaryChartValue);
+  });
+}
+
+function addButtonsFavoriteHandlers() {
+  let languages = document.querySelectorAll(".candidate__button-star");
+
+  languages.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.classList.toggle("candidate__button--checked");
+    });
   });
 }
