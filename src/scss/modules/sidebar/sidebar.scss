@@ -13,9 +13,20 @@
 
 .sidebar {
     background: $gray;
-    position: relative;
     transition: width 0.2s linear;
-    width: $sidebar-width;
+    width: 100%;
+    height: 48px;
+    position: fixed;
+    z-index: 100;
+    overflow: hidden;
+    transition: height 0.2s linear;
+
+    @media (min-width: $desktop-width) {
+        width: $sidebar-width;
+        height: auto;
+        position: relative;
+        z-index: 0;
+    }
 
     &__link {
         text-decoration: none;
@@ -60,11 +71,7 @@
     }
 
     &--collapsed {
-        width: $sidebar-width-collapsed;
-
-        .content { 
-            width: calc(100% - #{$sidebar-width-collapsed});
-        }
+        height: 100vh;
         
         .sidebar {
 
@@ -103,9 +110,9 @@
             &:not(:last-child) {
                 &::after {
                     content: '';
-                    width: 80%;
+                    width: 95%;
                     display: block;
-                    height: 3px;
+                    height: 1px;
                     margin: 0 auto;
                     background: $dark-lighter;
                 }
@@ -131,6 +138,23 @@
             &__notification {
                 font-size: 8px;
                 padding: 2px 4px;
+            }
+        }
+
+        @media (min-width: $desktop-width) {
+            width: $sidebar-width-collapsed;
+
+            .content { 
+                width: calc(100% - #{$sidebar-width-collapsed});
+            }
+
+            .nav-section {
+                &:not(:last-child) {
+                    &::after {
+                        width: 80%;
+                        height: 3px;
+                    }
+                }
             }
         }
     }

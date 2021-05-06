@@ -26,8 +26,13 @@ html {
 }
 
 .app {
-  display: grid;
-  grid-template-columns: min-content auto;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.2s linear;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: min-content auto;
+    min-height: 100vh;
+  }
 }
