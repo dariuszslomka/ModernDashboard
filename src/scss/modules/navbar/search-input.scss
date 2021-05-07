@@ -4,8 +4,8 @@
         position: absolute;
         background: transparent;
         left: 50%;
-        top: 50px;
-        width: 64px;
+        top: 32px;
+        width: calc(100% - 20px);
         height: 64px;
         transform: translateX(-50%);
         color: $purple;
@@ -16,13 +16,26 @@
         border: 2px solid $purple;
         outline: none;
         padding: 0 30px;
-        
+
         &:focus {
-            width: calc(100% - 400px);
             opacity: 1;
 
             & + .app {
-                transform: perspective(1024px) rotateX(30deg);
+                transform: translateY(128px);
+            }
+        }
+        
+        @media (min-width: $desktop-width) {
+            width: 64px;
+            top: 50px;
+
+            &:focus {
+                width: calc(100% - 400px);
+                opacity: 1;
+    
+                & + .app {
+                    transform: perspective(1024px) rotateX(30deg);
+                }
             }
         }
     }
