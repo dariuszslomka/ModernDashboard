@@ -1,9 +1,13 @@
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 0 20px 0;
+    display: none;
+    
+    @media (min-width: $desktop-width) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 0 20px 0;
+    }
 
     &__icon {
         color: $light;

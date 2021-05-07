@@ -19,6 +19,7 @@
     position: fixed;
     z-index: 100;
     overflow: hidden;
+    overflow-y: scroll;
     transition: height 0.2s linear;
 
     @media (min-width: $desktop-width) {
@@ -26,17 +27,23 @@
         height: auto;
         position: relative;
         z-index: 0;
+        overflow-y: unset;
+        transition: width 0.2s linear;
     }
 
     &__link {
         text-decoration: none;
         color: rgba($purple, 0.3);
         font-family: 'Leckerli One', cursive;
-        font-size: 2.25rem;
+        font-size: 28px;
         text-align: center;
         font-weight: lighter;
         position: relative;
         display: block;
+
+        @media (min-width: $desktop-width) {
+            font-size: 2.25rem;
+        }
 
         &::before {
             content: '';
@@ -64,10 +71,15 @@
     }
 
     &__tittle {
-        margin: 20px 0;
+        margin: 6px 20px;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
+
+        @media (min-width: $desktop-width) {
+            justify-content: center;
+            margin: 20px 0;
+        }
     }
 
     &--collapsed {
@@ -75,69 +87,8 @@
         
         .sidebar {
 
-            &__toggler {
-                display: flex;
-                width: 100%;
-                position: unset;
-            }
-
             &__toggler-icon {
-                transform: rotateY(180deg);
-            }
-
-            &__tittle {
-                display: none;
-            }
-        }
-
-        .hero {
-            &__name {
-                font-size: 10px;
-            }
-
-            &__status {
-                font-size: 10px;
-            }
-
-            &__photo-wrapper {
-                width: 48px;
-                height: 48px;
-            }
-        }
-
-        .nav-section {
-
-            &:not(:last-child) {
-                &::after {
-                    content: '';
-                    width: 95%;
-                    display: block;
-                    height: 1px;
-                    margin: 0 auto;
-                    background: $dark-lighter;
-                }
-            }
-
-            &__title {
-                display: none;
-            }
-        }
-
-        .list-item {
-            overflow: hidden;
-            background: $gray;
-            transition: width 0.2s linear;
-            padding: 10px 4px 10px 16px;
-
-            &:hover {
-                width: $sidebar-width;
-                box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
-                z-index: 2;
-            }
-
-            &__notification {
-                font-size: 8px;
-                padding: 2px 4px;
+                transform: rotate(-90deg);
             }
         }
 
@@ -148,12 +99,71 @@
                 width: calc(100% - #{$sidebar-width-collapsed});
             }
 
+            .sidebar {
+
+                &__toggler {
+                    display: flex;
+                    width: 100%;
+                    position: unset;
+                }
+    
+                &__toggler-icon {
+                    transform: rotateY(180deg);
+                }
+    
+                &__tittle {
+                    display: none;
+                }
+            }
+
             .nav-section {
+
                 &:not(:last-child) {
                     &::after {
-                        width: 80%;
-                        height: 3px;
+                        content: '';
+                        width: 95%;
+                        display: block;
+                        height: 1px;
+                        margin: 0 auto;
+                        background: $dark-lighter;
                     }
+                }
+    
+                &__title {
+                    display: none;
+                }
+            }
+
+            .hero {
+                &__name {
+                    font-size: 10px;
+                }
+    
+                &__status {
+                    font-size: 10px;
+                }
+    
+                &__photo-wrapper {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            .list-item {
+                overflow: hidden;
+                background: $gray;
+                transition: width 0.2s linear;
+                padding: 10px 4px 10px 16px;
+    
+                &:hover {
+                    width: $sidebar-width;
+                    box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.15);
+                    z-index: 2;
+                }
+    
+                &__notification {
+                    font-size: 8px;
+                    padding: 2px 4px;
                 }
             }
         }
