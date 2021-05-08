@@ -2,19 +2,55 @@
     width: 100%;
     border-collapse: collapse;
 
+    &__header {
+        display: none;
+
+        @media (min-width: $desktop-width) {
+            display: table-header-group;
+        }
+    }
+
     &__row {
         border-bottom: 1px solid $gray;
-        height: 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         &:nth-of-type(even) {
             background: $gray;
         }
+
+        @media (min-width: $desktop-width) {
+            display: table-row;
+            height: 56px;
+        }
     }
 
     &__td {
-        padding: 0 4px;
+        height: 32px;
         font-size: 14px;
         position: relative;
+        padding-left: 50%;
+        display: flex;
+        align-items: center;
+        overflow-x: hidden;
+
+        &::before {
+            content: attr(data-title);
+            font-size: 14px;
+            top: 9px;
+            left: 8px;
+            position: absolute;
+
+            @media (min-width: $desktop-width) {
+                display: none;
+            }
+        }
+
+        @media (min-width: $desktop-width) {
+            padding: 0 4px;
+            display: table-cell;
+        }
     }
 
     &__th {

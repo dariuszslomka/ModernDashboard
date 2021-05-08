@@ -19,15 +19,28 @@
         max-width: 96px;
         padding: 8px 0;
         text-align: center;
-        color: white;
         font-size: 14px;
+        font-weight: bold;
 
         &--pending {
-            @include background-gradient($orange);
+            color: $orange;
         }
 
         &--completed {
-            @include background-gradient($purple);
+            color: $purple;
+        }
+
+        @media (min-width: $desktop-width) {
+            color: white;
+            font-weight: normal;
+
+            &--pending {
+                @include background-gradient($orange);
+            }
+    
+            &--completed {
+                @include background-gradient($purple);
+            }
         }
     }
 
@@ -82,7 +95,8 @@
 .actions {
     position: absolute;
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.15);
-    right: 0;
+    right: 50%;
+    transform: translateX(100%);
     top: 100%;
     background: white;
     list-style: none;
@@ -90,6 +104,10 @@
     padding: 0;
     z-index: 1;
     
+    @media (min-width: $desktop-width) {
+        right: 0;
+        transform: translateX(0%);
+    }
 
     &__item {
         display: flex;
