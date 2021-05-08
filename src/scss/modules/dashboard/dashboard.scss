@@ -18,9 +18,15 @@
     }
 
     &__container {
-        display: grid;
-        column-gap: 32px;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        
+        @media (min-width: $wide-width) {
+            display: grid;
+            column-gap: 32px;
+            grid-template-columns: 1fr 1fr;
+        }
+
     }
 }
 
