@@ -1,5 +1,7 @@
 $candidates-number: 6;
 $visible-candidate: 4;
+$visible-candidate-mobile: 1;
+$visible-candidate-tablet: 3;
 
 @keyframes sliding {
     from {
@@ -41,8 +43,16 @@ $visible-candidate: 4;
 
 .candidates__container {
     display: flex;
-    width: calc(100% * #{$candidates-number} / #{$visible-candidate});
+    width: calc(100% * #{$candidates-number} / #{$visible-candidate-mobile});
     animation: sliding 16s infinite alternate-reverse linear;
+
+    @media (min-width: $tablet-width) {
+        width: calc(100% * #{$candidates-number} / #{$visible-candidate-tablet});
+    }
+
+    @media (min-width: $wide-width) {
+        width: calc(100% * #{$candidates-number} / #{$visible-candidate});
+    }
 }
 
 .candidate {
