@@ -1,4 +1,4 @@
-![cover](https://dariuszslomka.github.io/ModernDashboard/img/screen.png)
+![cover](https://dariuszslomka.github.io/ModernDashboard/assets/img/screen.png)
 
 # WTF Webpack Starter Kit 
 
