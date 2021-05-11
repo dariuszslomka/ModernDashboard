@@ -6,7 +6,7 @@ Project created to practice advanced SCSS.
 
 # Live address
 
-[Live](https://dariuszslomka.github.io/ModernDashboard)
+[https://dariuszslomka.github.io/ModernDashboard](https://dariuszslomka.github.io/ModernDashboard)
 
 ## Source
 
