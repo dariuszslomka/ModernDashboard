@@ -17,6 +17,11 @@
         opacity: 0;
         transition: transform 0.1s linear, opacity 0.1s linear;
         font-size: 18px;
+        display: none;
+        
+        @media (min-width: $desktop-width) {
+            display: inline-block;
+        }
     }
 
     &:hover {

@@ -50,9 +50,14 @@
         opacity: 1;
         transition: opacity 0.2s linear;
         color: $dark-lighter;
+        display: none;
 
         &:nth-of-type(2) {
             opacity: 0;
+        }
+
+        @media (min-width: $desktop-width) {
+            display: inline-block;
         }
     }
 
@@ -60,8 +65,12 @@
         //position: absolute;
         display: flex;
         align-items: center;
-        margin-left: 32px;
+        margin-left: 0;
         height: 100%;
+
+        @media (min-width: $desktop-width) {
+            margin-left: 32px;
+        }
 
         &--hidden {
             position: absolute;
