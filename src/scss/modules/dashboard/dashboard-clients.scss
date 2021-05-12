@@ -167,4 +167,8 @@
 
 .email {
     overflow-x: scroll;
+
+    @media (min-width: $desktop-width) {
+        overflow-x: auto;
+    }
 }
