@@ -4,6 +4,8 @@ import {
   sortTableByColumnDescending,
 } from "./tablesort.js";
 
+document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+
 addHandlerToMenuToggleButton();
 addHandlersOnClickToLanguages();
 addHandlersOnClientDropdownClick();

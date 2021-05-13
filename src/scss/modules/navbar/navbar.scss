@@ -19,6 +19,10 @@
     }
 
     &__section {
-        margin-left: 16px;
+        margin-left: 12px;
+        
+        @media (min-width: $desktop-width) {
+            margin-left: 16px;
+        }
     }
 }
