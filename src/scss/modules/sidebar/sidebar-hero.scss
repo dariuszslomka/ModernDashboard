@@ -9,6 +9,11 @@
         margin: 0 0 20px 0;
     }
 
+    &__header {
+        margin: 0;
+        display: inherit;
+    }
+
     &__icon {
         color: $light;
         font-size: 28px;
